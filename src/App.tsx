@@ -1,17 +1,17 @@
 import React from 'react'
-// import './assets/style/global.less'
-// import loadable from '@loadable/component'
-// import Loading from './Loading'
+import './assets/style/global.less'
+import loadable from '@loadable/component'
+import Loading from './Loading'
 
-// const LoadableComponent = loadable(() => import('./Dashboard'), {
-// 	fallback: <Loading />
-// })
+const LoadableComponent = loadable(() => import(/* webpackChunkName: "dashboard" */ './Dashboard'), {
+	fallback: <Loading />
+})
 
-// export default class LoadableDashboard extends React.Component {
-// 	render() {
-// 		return <LoadableComponent />
-// 	}
-// }
+export class LoadableDashboard extends React.Component {
+	render() {
+		return <LoadableComponent />
+	}
+}
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
@@ -71,7 +71,7 @@ function RouteWithSubRoutes(route: any) {
 }
 
 function Sandwiches() {
-	return <h2>Sandwiches</h2>
+	return <div><LoadableDashboard></LoadableDashboard></div>
 }
 
 function Tacos(routes: any) {
