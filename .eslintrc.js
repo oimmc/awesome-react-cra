@@ -21,12 +21,12 @@ module.exports = {
 		ecmaVersion: 2018,
 		sourceType: 'module'
 	},
-	plugins: ['react', '@typescript-eslint'],
+	plugins: ['react', '@typescript-eslint', 'prettier'],
 	rules: {
 		indent: ['error', 'tab'],
-		'linebreak-style': ['off', 'windows'],
 		quotes: ['error', 'single'],
 		semi: ['error', 'never'],
+		'linebreak-style': ['off', 'windows'],
 		'react/display-name': 'off',
 		'react/no-children-prop': 'off',
 	}
